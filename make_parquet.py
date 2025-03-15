@@ -23,7 +23,7 @@ def simulator(seed, number_density, outfile):
 
 
     # Maximum redshift
-    z_max = 0.16
+    z_max = 0.1
 
     # Calculate comoving volume up to z_max in Mpc^3
     volume_in_Mpc3 = 4/3 * np.pi * cosmo.comoving_distance(z_max).value**3
