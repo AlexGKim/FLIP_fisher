@@ -7,8 +7,6 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 from astropy.cosmology import z_at_value
 
-vel=False
-vel=True
 
 
 def simulator(seed, number_density, outfile):
@@ -73,7 +71,7 @@ def simulator(seed, number_density, outfile):
     galactic = coords.galactic
 
     # Apply selection criteria
-    mask = (dec_deg < 2) & (np.abs(galactic.b.degree) > 10) & (dec_deg > -62)
+    mask = (dec_deg < -5.6) & (np.abs(galactic.b.degree) > 30) & (dec_deg > -49.6)
     filtered_df = df[mask]
 
     print(f"Selected {len(filtered_df)} points after applying criteria")
