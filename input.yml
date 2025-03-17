@@ -1,9 +1,9 @@
-size_batch: 128
-number_worker: 1
+size_batch: 4
+number_worker: 16 
 
 ### what compute
-vel_only: False
-cross: True
+vel_only: True
+cross: False
 
 
 cosmo_params:
@@ -39,7 +39,7 @@ model: 'linear'
 
 ## input redshifts
 zmin: 0.01
-zmax: 0.16
+zmax: 0.10
 nbins: 2
 
 
