@@ -3,7 +3,8 @@
 #for density you need pypower and pmesh
 
 #create a new conda enviroment with python 3.8.0
-
+# pip install --upgrade "jax[cuda12_pip]" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+# pip install nvidia-cudnn-cu11==8.9.1.23
 ## Damiano's instructions
 #conda install -c bccp pmesh
 #python -m pip install git+https://github.com/cosmodesi/pypower
