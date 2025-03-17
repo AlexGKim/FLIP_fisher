@@ -1,9 +1,9 @@
-size_batch: 4
-number_worker: 16 
+size_batch: 80000
+number_worker: 8
 
 ### what compute
-vel_only: True
-cross: False
+vel_only: False
+cross: True
 
 
 cosmo_params:
@@ -17,13 +17,13 @@ cosmo_params:
 #data file needs ra,dec (radians) and zobs##
 gal_catalog: 'file_gal.parquet'
 vel_catalog: 'file_vel.parquet'
-resfile: 'res_file.csv'
+resfile: 'res_vd15.csv'
 
 
 ## input for velocity
 sigma_u: 15
 sigma_v: 300
-sigma_M: 0.1
+sigma_M: 0.15
 
 
 #input for density
