@@ -15,7 +15,7 @@ def simulator(seed, number_density, outfile):
     np.random.seed(seed)
 
     # Cosmological parameters
-    cosmo = FlatLambdaCDM(H0=70, Om0=0.3)
+    cosmo = FlatLambdaCDM(H0=100, Om0=0.3)
 
     # Number density in h^3 Mpc^-3
 
@@ -23,12 +23,7 @@ def simulator(seed, number_density, outfile):
     # Maximum redshift
     z_max = 0.1
 
-    # Calculate comoving volume up to z_max in Mpc^3
-    volume_in_Mpc3 = 4/3 * np.pi * cosmo.comoving_distance(z_max).value**3
-
-    # Convert to (h^-1 Mpc)^3 units
-    h = cosmo.H0.value / 100
-    volume_in_h_units = volume_in_Mpc3 * h**3
+    volume_in_h_units =  cosmo.comoving_volume(z_max).value
 
     # Calculate expected number of points
     n_points = int(number_density * volume_in_h_units)
@@ -84,7 +79,7 @@ def simulator(seed, number_density, outfile):
     print("Data saved to {}".format(outfile))
 
 #velocity
-simulator(42, 4.5e-4/2,'file_vel.parquet')
+simulator(42, 2e-4/2,'file_vel.parquet')
 
 # density
-simulator(43, 4.5e-4*4,'file_gal.parquet')
+#simulator(43, 4.5e-4*4,'file_gal.parquet')
